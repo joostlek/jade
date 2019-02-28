@@ -31,7 +31,7 @@ De Converter is nog leeg en die gaan we in de volgende stap invullen.
 
 Start de FrontendApplication.
 
-Ga naar ```localhost:8100```. Je ziet hier dat er nu een link wordt gevraagd, als je die invult wordt je doorgestuurd naar een pagina waar staat dat hij wordt geconverteerd. In feite doet hij nu niks.
+Ga naar ```localhost:8100/convert```. Je ziet hier dat er nu een link wordt gevraagd, als je die invult wordt je doorgestuurd naar een pagina waar staat dat hij wordt geconverteerd. In feite doet hij nu niks.
 
 Wat je eigenlijk wilt dat er gebeurd is dat er een request gaat naar de converter. Hoe doe je dat? We kunnen hier REST voor gebruiken!
 
@@ -53,6 +53,7 @@ public class Link {
     
     private String link;
     
+    public Link() {}
     public Link(String link) {
         this.link = link;
     }
@@ -79,13 +80,17 @@ Deze implementeren we in een Service, hier gaat de magie gebeuren die de link na
 
 ```java
 @Service
-public class ConverterService extends ConverterServiceInterface {
+public class ConverterService implements ConverterServiceInterface {
     @Autowired
     private LinkRepository linkRepository;
 
     @Override
     public void convert(Link link) {
-        Thread.sleep(10000);
+        try {
+            Thread.sleep(10000);
+        } catch (InterrruptedException e) {
+            e.printStackTrace();
+        }
         this.linkRepository.save(link);
     }
 }
@@ -99,7 +104,7 @@ public class ConverterController {
     @Autowired
     private ConverterServiceInterface converterService;
     
-    @PostMapping('/api/convert')
+    @PostMapping("/api/convert")
     public void receiveLink(@RequestBody Link link) {
         this.converterService.convert(link);
     }
@@ -130,8 +135,11 @@ public class FrontendService implements FrontendServiceInterface {
     @Override
     public void convertYoutubeLink(String link) {
         RestTemplate restTemplate = new RestTemplate();
-        String converterUrl = "localhost:8100/api/convert";
+        String converterUrl = "http://localhost:8101/api/convert";
         ResponseEntity<String> authenticateResponse = restTemplate.getForEntity(converterUrl, String.class);
+        LinkDTO linkDTO = new LinkDTO();
+        linkDTO.setLink(link);
+        restTemplate.postForEntity(converterUrl, linkDTO, String.class);
     }
 }
 ```
@@ -162,6 +170,7 @@ Message queues hebben een Exchange en een routing key. De exchange is het onderw
 Deze Config klasse zorgt ervoor dat alle berichten over de converter exchange gaat.
 
 ```java
+// LET OP imports van de Exchange en TopicExchange uit org.springframework.amqp.core
 @Configuration
 public class Config {
     @Bean
@@ -223,6 +232,7 @@ public class EventConsumerConfiguration {
                 .noargs();
     }
 
+    // Consumer schrijven we zo en hoeft dus niet geïmporteerd te worden
     @Bean
     public Consumer eventReceiver() {
         return new Consumer();
