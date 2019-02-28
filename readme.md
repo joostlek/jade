@@ -103,7 +103,7 @@ public class ConverterController {
     @Autowired
     private ConverterServiceInterface converterService;
     
-    @PostMapping('/api/convert')
+    @PostMapping("/api/convert")
     public void receiveLink(@RequestBody Link link) {
         this.converterService.convert(link);
     }
