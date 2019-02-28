@@ -232,6 +232,7 @@ public class EventConsumerConfiguration {
                 .noargs();
     }
 
+    // Consumer schrijven we zo en hoeft dus niet geïmporteerd te worden
     @Bean
     public Consumer eventReceiver() {
         return new Consumer();
