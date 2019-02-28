@@ -79,13 +79,17 @@ Deze implementeren we in een Service, hier gaat de magie gebeuren die de link na
 
 ```java
 @Service
-public class ConverterService extends ConverterServiceInterface {
+public class ConverterService implements ConverterServiceInterface {
     @Autowired
     private LinkRepository linkRepository;
 
     @Override
     public void convert(Link link) {
-        Thread.sleep(10000);
+        try {
+            Thread.sleep(10000);
+        } catch (InterrruptedException e) {
+            e.printStackTrace();
+        }
         this.linkRepository.save(link);
     }
 }
