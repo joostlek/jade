@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Jade</title>
+</head>
+<body>
+<h1>Form</h1>
+<form action="#" th:action="@{/convert}" th:object="${link}" method="post">
+    <p><label for="link">link:</label> <input id="link" type="text" th:field="*{link}"/></p>
+    <p><input type="submit" value="Submit"/></p>
+</form>
+</body>
+</html>
