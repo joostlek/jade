@@ -31,7 +31,7 @@ De Converter is nog leeg en die gaan we in de volgende stap invullen.
 
 Start de FrontendApplication.
 
-Ga naar ```localhost:8100```. Je ziet hier dat er nu een link wordt gevraagd, als je die invult wordt je doorgestuurd naar een pagina waar staat dat hij wordt geconverteerd. In feite doet hij nu niks.
+Ga naar ```localhost:8100/convert```. Je ziet hier dat er nu een link wordt gevraagd, als je die invult wordt je doorgestuurd naar een pagina waar staat dat hij wordt geconverteerd. In feite doet hij nu niks.
 
 Wat je eigenlijk wilt dat er gebeurd is dat er een request gaat naar de converter. Hoe doe je dat? We kunnen hier REST voor gebruiken!
 
