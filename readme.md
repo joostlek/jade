@@ -170,6 +170,7 @@ Message queues hebben een Exchange en een routing key. De exchange is het onderw
 Deze Config klasse zorgt ervoor dat alle berichten over de converter exchange gaat.
 
 ```java
+// LET OP imports van de Exchange en TopicExchange uit org.springframework.amqp.core
 @Configuration
 public class Config {
     @Bean
