@@ -90,7 +90,7 @@ public class ConverterService implements ConverterServiceInterface {
     public void convert(Link link) {
         try {
             Thread.sleep(10000);
-        } catch (InterrruptedException e) {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
         this.linkRepository.save(link);
