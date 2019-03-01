@@ -49,7 +49,7 @@ Momenteel is de converter nog leeg. De Converter gaat 2 dingen doen:
 
 Het gaat om 1 object draaien: Link
 
-Maar in de converter een class Link aan met onderstaande code:
+Maak in de converter een class Link aan met onderstaande code:
 
 ```java
 @Entity
@@ -75,7 +75,7 @@ public interface LinkRepository extends JpaRepository<Link, Long> {
 }
 ```
 
-We maken ook een Service Interface, deze definieert de functie die wordt aangeroepen om de converter te laten werken
+We maken ook een Service Interface met de naam ConverterServiceInterface, deze definieert de functie die wordt aangeroepen om de converter te laten werken
 
 ```java
 public interface ConverterServiceInterface {
@@ -83,7 +83,7 @@ public interface ConverterServiceInterface {
 }
 ```
 
-Deze implementeren we in een Service, hier gaat de magie gebeuren die de link naar de achterkant gooit
+Deze implementeren we in een Service. Maak nu een nieuwe class aan met de naam ConverterService. hier gaat de magie gebeuren die de link naar de achterkant gooit.
 
 ```java
 @Service
@@ -103,7 +103,8 @@ public class ConverterService implements ConverterServiceInterface {
 }
 ```
 
-Ook moeten we de actie krijgen waarop de converter gaat werken, dit gebeurd in de Controller
+Ook moeten we de actie krijgen waarop de converter gaat werken, dit gebeurd in de Controller.
+Maak een bestand aan genaamd ConverterController en plaats onderstaande code erin.
 
 ```java
 @RestController
@@ -119,6 +120,7 @@ public class ConverterController {
 ```
 
 De converter is voor nu af.
+Dit kun je testen door iets in de frontend mee te geven. Als het goed is duurt het nu 10 seconden voordat start converting gelogt wordt. 
 
 We hoeven er alleen nog maar voor te zorgen dat de front end webservice de converter kan aanroepen.
 
@@ -128,7 +130,7 @@ De backend heeft nu een REST API.
 
 De frontend kan hier nu gebruik van maken.
 
-In de FrontEndservice voegen we nu in de FrontendService.convertYoutubeLink() een manier toe om met de backend te communiceren.
+In de FrontEndservice overschrijven we nu de FrontendService.convertYoutubeLink(). Met deze code maken we een manier om met de backend te communiceren.
 
 ```java
 @Service
@@ -137,7 +139,6 @@ public class FrontendService implements FrontendServiceInterface {
     public void convertYoutubeLink(String link) {
         RestTemplate restTemplate = new RestTemplate();
         String converterUrl = "http://localhost:8101/api/convert";
-        ResponseEntity<String> authenticateResponse = restTemplate.getForEntity(converterUrl, String.class);
         LinkDTO linkDTO = new LinkDTO();
         linkDTO.setLink(link);
         ResponseEntity<String> response = restTemplate.postForEntity(converterUrl, linkDTO, String.class);
@@ -169,6 +170,7 @@ Message queue!  👉🏻😎👉🏻
 Message queues hebben een Exchange en een routing key. De exchange is het onderwerp, en de routing key is de bestemming van de message.
 
 Deze Config klasse zorgt ervoor dat alle berichten over de converter exchange gaat.
+Maak deze aan in de front-end
 
 ```java
 // LET OP imports van de Exchange en TopicExchange uit org.springframework.amqp.core
