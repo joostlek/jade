@@ -135,7 +135,7 @@ public class FrontendService implements FrontendServiceInterface {
         ResponseEntity<String> authenticateResponse = restTemplate.getForEntity(converterUrl, String.class);
         LinkDTO linkDTO = new LinkDTO();
         linkDTO.setLink(link);
-        restTemplate.postForEntity(converterUrl, linkDTO, String.class);
+        ResponseEntity<String> response = restTemplate.postForEntity(converterUrl, linkDTO, String.class);
     }
 }
 ```
