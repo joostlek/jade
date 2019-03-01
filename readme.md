@@ -6,6 +6,7 @@ Workshop voor het ontwikkelen van een microservice voor de cursus integration an
 * [Erlang](http://www.erlang.org/downloads "Erlang")
 * [RabbitMQ](http://www.rabbitmq.com/download.html "RabbitMQ")
 * [IntelliJ Ultimate Edition](https://www.jetbrains.com/idea/download/ "IntelliJ")
+* Een kopie van deze repository ```git clone "https://github.com/joostlek/jade.git"```
 
 ## Spring
 Om de REST web service te ontwikkelen wordt gebruik gemaakt van twee Spring Boot maven applicaties met de hieronderstaande dependencies.
