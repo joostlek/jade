@@ -1,8 +1,6 @@
 # MicroServices workshop
 Workshop voor het ontwikkelen van een microservice voor de cursus integration and communication van de Hogeschool Utrecht.
 
-De documenten voor de workshop zijn te vinden in ```/docs```. Doorloop voor het begin van de workshop de stappen van setup.
-
 ## Requirements
 * [Java SE 8 of 11](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html "Java SE 8")
 * [Erlang](http://www.erlang.org/downloads "Erlang")
