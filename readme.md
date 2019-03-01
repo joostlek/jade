@@ -277,19 +277,19 @@ en dan als je heel veel links erin zet, dan zie je dat hij ze om en om afhandeld
 
 ## Kennisvragen
 1. Noem minstens 2 voordelen en 2 nadelen van microservices
-2. Bij het ontwikkelen van microservices moet je denken in termen van:
-    A. Objecten
-    B. Events
-    C. Data
-    D. Klassen
-3. Wat is een kenmerk van een microservice?
-    A. Het heeft meerdere verantwoordelijkheden
-    B. Het is onafhankelijk
-    C. Elke klasse heeft zijn eigen database
-    D. Een microservice bevat de data die opgeslagen moet worden
-4. Wat is niet mogelijk met een message broker?
-    A. Resultaten terugsturen
-    B. Load balancing
-    C. Services aanroepen
-    D. Commando's in de wachtrij plaatsen
+2. Bij het ontwikkelen van microservices moet je denken in termen van:<br>
+    A. Objecten<br>
+    B. Events<br>
+    C. Data<br>
+    D. Klassen<br>
+3. Wat is een kenmerk van een microservice?<br>
+    A. Het heeft meerdere verantwoordelijkheden<br>
+    B. Het is onafhankelijk<br>
+    C. Elke klasse heeft zijn eigen database<br>
+    D. Een microservice bevat de data die opgeslagen moet worden<br>
+4. Wat is niet mogelijk met een message broker?<br>
+    A. Resultaten terugsturen<br>
+    B. Load balancing<br>
+    C. Services aanroepen<br>
+    D. Commando's in de wachtrij plaatsen<br>
 5. Noem minstens 2 verschillen in onderhoud tussen een monolothic en een microservice based application
