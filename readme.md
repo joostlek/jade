@@ -8,6 +8,11 @@ Workshop voor het ontwikkelen van een microservice voor de cursus integration an
 * [IntelliJ Ultimate Edition](https://www.jetbrains.com/idea/download/ "IntelliJ")
 * Een kopie van deze repository ```git clone "https://github.com/joostlek/jade.git"```
 
+## Importeren
+Open IntelliJ en ga naar ```file > new > project from existing sources```
+
+Selecteer eerst de projectfolder. Kies daarna voor *Import project from external model* en zorg ervoor dat je hierbij *Maven* hebt geselecteerd. De rest van het proces kan met standaardinstellingen doorlopen worden.
+
 ## Spring
 Om de REST web service te ontwikkelen wordt gebruik gemaakt van twee Spring Boot maven applicaties met de hieronderstaande dependencies.
 
