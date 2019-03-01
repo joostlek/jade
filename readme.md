@@ -274,3 +274,22 @@ Wat we nu hebben is leuk om mee te spelen, probeer eens de backend uit te zetten
 
 Je kan ook meerdere workers draaien (Edit Configurations -> ConverterApplication -> duplicate -> Override parameters -> server.port=8102)
 en dan als je heel veel links erin zet, dan zie je dat hij ze om en om afhandeld. Dus daarmee heb je een winst van 100%. Quick maths.
+
+## Kennisvragen
+1. Noem minstens 2 voordelen en 2 nadelen van microservices
+2. Bij het ontwikkelen van microservices moet je denken in termen van:
+    A. Objecten
+    B. Events
+    C. Data
+    D. Klassen
+3. Wat is een kenmerk van een microservice?
+    A. Het heeft meerdere verantwoordelijkheden
+    B. Het is onafhankelijk
+    C. Elke klasse heeft zijn eigen database
+    D. Een microservice bevat de data die opgeslagen moet worden
+4. Wat is niet mogelijk met een message broker?
+    A. Resultaten terugsturen
+    B. Load balancing
+    C. Services aanroepen
+    D. Commando's in de wachtrij plaatsen
+5. Noem minstens 2 verschillen in onderhoud tussen een monolothic en een microservice based application
