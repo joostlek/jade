@@ -9,7 +9,7 @@ Workshop voor het ontwikkelen van een microservice voor de cursus integration an
 * Een kopie van deze repository ```git clone "https://github.com/joostlek/jade.git"```
 
 ## Importeren
-Open IntelliJ en ga naar ```file > new > project from existing sources```
+Open IntelliJ en ga naar ```File > New > Project from Existing Sources...```
 
 Selecteer eerst de projectfolder. Kies daarna voor *Import project from external model* en zorg ervoor dat je hierbij *Maven* hebt geselecteerd. De rest van het proces kan met standaardinstellingen doorlopen worden.
 
