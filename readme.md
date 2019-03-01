@@ -1,6 +1,8 @@
 # MicroServices workshop
 Workshop voor het ontwikkelen van een microservice voor de cursus integration and communication van de Hogeschool Utrecht.
 
+Link naar de presentatie: https://docs.google.com/presentation/d/1m3XyJJ4htPAgVz7bjUHFPU3TMdPa52Xbh_GsYUKITyU/edit?usp=sharing
+
 ## Requirements
 * [Java SE 8 of 11](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html "Java SE 8")
 * [Erlang](http://www.erlang.org/downloads "Erlang")
