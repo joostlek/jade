@@ -129,7 +129,7 @@ public class FrontendService implements FrontendServiceInterface {
     @Override
     public void convertYoutubeLink(String link) {
         RestTemplate restTemplate = new RestTemplate();
-        String converterUrl = "http://localhost:8200/api/convert";
+        String converterUrl = "http://localhost:8101/api/convert";
         ResponseEntity<String> authenticateResponse = restTemplate.getForEntity(converterUrl, String.class);
         LinkDTO linkDTO = new LinkDTO();
         linkDTO.setLink(link);
