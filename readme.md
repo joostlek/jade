@@ -4,9 +4,10 @@ Workshop voor het ontwikkelen van een microservice voor de cursus integration an
 De documenten voor de workshop zijn te vinden in ```/docs```. Doorloop voor het begin van de workshop de stappen van setup.
 
 ## Requirements
-* Java SE 8 of 11
-* RabbitMQ
-* Erlang
+* [Java SE 8 of 11](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html "Java SE 8")
+* [Erlang](http://www.erlang.org/downloads "Erlang")
+* [RabbitMQ](http://www.rabbitmq.com/download.html "RabbitMQ")
+* [IntelliJ Ultimate Edition](https://www.jetbrains.com/idea/download/ "IntelliJ")
 
 ## Spring
 Om de REST web service te ontwikkelen wordt gebruik gemaakt van twee Spring Boot maven applicaties met de hieronderstaande dependencies.
