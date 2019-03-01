@@ -111,15 +111,9 @@ public class ConverterController {
 }
 ```
 
-Als er nu een POST-request naar ```localhost:8101/api/convert``` gaat met in de body
-```json
-{
-  "link": "delinkdiejehebtgestuurd"
-}
-```
-dan wordt ConvertService.convert() in werking gezet.
+De converter is voor nu af.
 
-Dat betekent dat de converter voor nu af is!
+We hoeven er alleen nog maar voor te zorgen dat de front end webservice de converter kan aanroepen.
 
 ## Stap 3 - Koppel de frontend aan de backend via HTTP
 
@@ -135,7 +129,7 @@ public class FrontendService implements FrontendServiceInterface {
     @Override
     public void convertYoutubeLink(String link) {
         RestTemplate restTemplate = new RestTemplate();
-        String converterUrl = "http://localhost:HIERCONVERTERPORT/api/convert";
+        String converterUrl = "http://localhost:8200/api/convert";
         ResponseEntity<String> authenticateResponse = restTemplate.getForEntity(converterUrl, String.class);
         LinkDTO linkDTO = new LinkDTO();
         linkDTO.setLink(link);
