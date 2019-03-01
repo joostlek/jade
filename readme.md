@@ -44,6 +44,8 @@ Momenteel is de converter nog leeg. De Converter gaat 2 dingen doen:
 
 Het gaat om 1 object draaien: Link
 
+Maar in de converter een class Link aan met onderstaande code:
+
 ```java
 @Entity
 public class Link {
@@ -60,7 +62,7 @@ public class Link {
 }
 ```
 
-Maak hier een Repository voor in LinkRepository 
+Maak hier vervolgens een Repository voor genaamd LinkRepository 
 
 ```java
 @Repository
